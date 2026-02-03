@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SunnyRoads Adventures</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+/* Tours icons style */
+#tours ul {
+  list-style: none; /* remove bullets */
+  padding: 0;
+  margin: 0;
+}
+
+#tours li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  font-size: 18px;
+  background: #f7f2e6; /* soft card background */
+  padding: 10px 12px;
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#tours li img {
+  width: 32px; /* size of icon */
+  height: 32px;
+  margin-right: 14px;
+}
+
+/* Hover effect on each tour */
+#tours li:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  #tours li {
+    font-size: 16px;
+  }
+  #tours li img {
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+  }
+}
+</style>
+
+</head>
+<body>
+
+<!-- Hamburger -->
+<div class="hamburger" id="hamburger">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+<!-- Menu -->
+<nav class="menu" id="menu">
+  <a href="#home">Home</a>
+  <a href="#what">What We Do</a>
+  <a href="#tours">Tours</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<div class="container">
+
+  <!-- HERO -->
+  <section class="card hero" id="home">
+    <img src="SunnyRoads.gif" alt="SunnyRoads Adventures Logo" class="logo">
+    <h1>SunnyRoads Adventures</h1>
+    <p>Discover Nicaragua in a relaxed, safe, and personal way. Private tours, transportation, and authentic local experiences.</p>
+  </section>
+
+  <!-- WHAT WE DO -->
+  <section class="card" id="what">
+    <h2>What We Do</h2>
+    <p>We help travelers explore Nicaragua comfortably with honest local knowledge, flexible planning, and stress-free bookings.</p>
+  </section>
+
+  <!-- TOURS -->
+  <section class="card" id="tours">
+    <h2>Tours & Services</h2>
+    <ul>
+      <li><img src="icons/Sunset.png" alt="Sunset Tour Icon"> Popoyo Sunset Tours</li>
+      <li><img src="icons/Boat.png" alt="Ferry Icon"> Ometepe Ferry Pickup & Drop-off + Local Recommendations</li>
+      <li><img src="icons/Village.png" alt="Island Drive Icon"> Multi-day Ometepe Island Drive & Exploration</li>
+      <li><img src="icons/Volcano.png" alt="Volcano Icon"> Volcano & Nature Tours</li>
+      <li><img src="icons/Culture.png" alt="City Tour Icon"> City & Cultural Tours</li>
+      <li><img src="icons/Latte.png" alt="Coffee Icon"> Coffee Farm Experiences</li>
+      <li><img src="icons/Fishing.png" alt="Fishing Icon"> Fishing Tours</li>
+      <li><img src="icons/Airport.png" alt="Airport Pickup Icon"> Airport Pickup & Transportation</li>
+      <li><img src="icons/Beer.png" alt="Bar Icon"> Club / Bar Hangout & Wingman Companion</li>
+      <li><img src="icons/Sunset.png" alt="Custom Adventure Icon"> Custom Private Adventures</li>
+    </ul>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="card" id="contact">
+    <h2>Contact</h2>
+    <p>Reach out anytime for bookings or questions.</p>
+  </section>
+
+</div>
+
+<!-- Social Buttons -->
+<div class="social">
+  <a class="facebook" href="https://facebook.com" target="_blank">Facebook</a>
+  <a class="whatsapp" href="https://wa.me/50558365522" target="_blank">WhatsApp</a>
+</div>
+
+<script>
+// Hamburger toggle
+const hamburger = document.getElementById('hamburger');
+const menu = document.getElementById('menu');
+
+hamburger.addEventListener('click', () => {
+  menu.classList.toggle('active');
+});
+
+// Close menu if click outside
+document.addEventListener('click', (e) => {
+  if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
+    menu.classList.remove('active');
+  }
+});
+</script>
+
+</body>
+</html>
