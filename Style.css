@@ -1,0 +1,176 @@
+:root {
+  --primary: #1bb3b3;
+  --secondary: #6fe3dc;
+  --gold: #f3ecd9;
+  --gold-soft: #f7f2e6;
+  --text: #2b2b2b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: linear-gradient(180deg, #1bb3b3 0%, #6fe3dc 45%, #f7f2e6 90%);
+  background-size: 200% 200%;
+  animation: sunsetMove 18s ease infinite;
+}
+
+@keyframes sunsetMove {
+  0% { background-position: 50% 0%; }
+  50% { background-position: 50% 100%; }
+  100% { background-position: 50% 0%; }
+}
+
+/* Hamburger Menu */
+.hamburger {
+  position: fixed;
+  top: 18px;
+  left: 20px;
+  width: 35px;
+  height: 25px;
+  cursor: pointer;
+  z-index: 1500;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamburger div {
+  height: 4px;
+  background: #000;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active div:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+.hamburger.active div:nth-child(2) { opacity: 0; }
+.hamburger.active div:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+
+/* Menu */
+.menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 65%;
+  height: 100%;
+  background: rgba(243,236,217,0.98);
+  box-shadow: 4px 0 14px rgba(0,0,0,0.1);
+  transition: left 0.4s ease;
+  padding-top: 80px;
+  z-index: 1400;
+}
+
+.menu a {
+  display: block;
+  padding: 16px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #000;
+  font-weight: bold;
+}
+
+.menu.active { left: 0; }
+
+/* Container */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 22px 20px;
+}
+
+.card {
+  background: linear-gradient(180deg, var(--gold), var(--gold-soft));
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+/* Hero */
+.hero .logo {
+  width: 280px;
+  margin-bottom: 6px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  animation: floatLogo 6s ease-in-out infinite;
+}
+
+@keyframes floatLogo {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* Title fade */
+.hero h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 8px 0 0 0;
+  background: linear-gradient(90deg, #1bb3b3, #6fe3dc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeTitle 4s ease-in-out infinite alternate;
+}
+
+@keyframes fadeTitle {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+
+/* Subtitle fade */
+.hero p {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 4px;
+  animation: fadeText 4s ease-in-out infinite alternate;
+}
+
+@keyframes fadeText {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+/* Tours list plain text */
+#tours ul {
+  list-style: none; /* remove bullets/emojis */
+  padding: 0;
+  margin: 0;
+}
+
+#tours li {
+  font-size: 18px;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+/* Social Buttons */
+.social {
+  position: fixed;
+  bottom: 22px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 1300;
+}
+
+.social a {
+  text-decoration: none;
+  color: white;
+  padding: 14px 20px;
+  border-radius: 50px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.whatsapp { background: #25d366; }
+.facebook { background: #1877f2; }
